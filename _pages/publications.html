@@ -11,26 +11,29 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
+{% assign peer_reviewed_posts = site.publications | where: "category", "peer_reviewed" | sort: "date" | reverse %}
+{% assign conference_posts = site.publications | where: "category", "conference_papers" | sort: "date" | reverse %}
+
+<details open>
+  <summary><strong>Peer-Reviewed Articles ({{ peer_reviewed_posts | size }})</strong></summary>
+  {% if peer_reviewed_posts.size > 0 %}
+    {% for post in peer_reviewed_posts %}
       {% include archive-single.html %}
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  {% else %}
+    <p>No peer-reviewed articles listed yet.</p>
+  {% endif %}
+</details>
 
+<details>
+  <summary><strong>Conference Papers ({{ conference_posts | size }})</strong></summary>
+  {% if conference_posts.size > 0 %}
+    {% for post in conference_posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% else %}
+    <p>No conference papers listed yet.</p>
+  {% endif %}
+</details>
 
 
