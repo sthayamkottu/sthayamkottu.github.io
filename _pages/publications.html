@@ -16,7 +16,7 @@ author_profile: true
 {% if site.publication_category %}
   {% for category in site.publication_category %}
     {% assign category_posts = sorted_publications | where: "category", category[0] %}
-    <details{% if category[0] == "peer_reviewed" %} open{% endif %}>
+    <details{% if category[0] == "manuscripts" %} open{% endif %}>
       <summary><strong>{{ category[1].title }} ({{ category_posts | size }})</strong></summary>
       {% if category_posts.size > 0 %}
         {% for post in category_posts %}

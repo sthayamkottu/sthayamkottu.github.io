@@ -24,13 +24,13 @@ repository               : "sthayamkottu/sandeep.thayamkottu"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Sandeep"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Terrestrial ecosystem ecologist"
   location         : "Earth"
-  employer         : "Red Brick University"
+  employer         : "Natural Resources Institute Finland"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "sandeep.thayamkottu@luke.fi" 
 
   # Academic websites
   academia         : # URL
@@ -86,9 +86,9 @@ author:
 publication_category:
   books:
     title: 'Books'
-  peer_reviewed:
-    title: 'Peer-Reviewed Articles'
-  conference_papers:
+  manuscripts:
+    title: 'Journal Articles'
+  conferences:
     title: 'Conference Papers'
 
 # Site Settings
