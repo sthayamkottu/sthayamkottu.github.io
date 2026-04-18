@@ -11,29 +11,25 @@ author_profile: true
 
 {% include base_path %}
 
-{% assign peer_reviewed_posts = site.publications | where: "category", "peer_reviewed" | sort: "date" | reverse %}
-{% assign conference_posts = site.publications | where: "category", "conference_papers" | sort: "date" | reverse %}
+{% assign sorted_publications = site.publications | sort: "date" | reverse %}
 
-<details open>
-  <summary><strong>Peer-Reviewed Articles ({{ peer_reviewed_posts | size }})</strong></summary>
-  {% if peer_reviewed_posts.size > 0 %}
-    {% for post in peer_reviewed_posts %}
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    {% assign category_posts = sorted_publications | where: "category", category[0] %}
+    <details{% if category[0] == "peer_reviewed" %} open{% endif %}>
+      <summary><strong>{{ category[1].title }} ({{ category_posts | size }})</strong></summary>
+      {% if category_posts.size > 0 %}
+        {% for post in category_posts %}
+          {% include archive-single.html %}
+        {% endfor %}
+      {% else %}
+        <p>No {{ category[1].title | downcase }} listed yet.</p>
+      {% endif %}
+    </details>
+  {% endfor %}
+{% else %}
+  {% for post in sorted_publications %}
       {% include archive-single.html %}
-    {% endfor %}
-  {% else %}
-    <p>No peer-reviewed articles listed yet.</p>
-  {% endif %}
-</details>
-
-<details>
-  <summary><strong>Conference Papers ({{ conference_posts | size }})</strong></summary>
-  {% if conference_posts.size > 0 %}
-    {% for post in conference_posts %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% else %}
-    <p>No conference papers listed yet.</p>
-  {% endif %}
-</details>
-
+  {% endfor %}
+{% endif %}
 
