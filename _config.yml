@@ -29,7 +29,7 @@ author:
   bio              : "Terrestrial ecosystem ecologist"
   location         : "Earth"
   employer         : "Natural Resources Institute Finland"
-  uri              : # URL
+  uri              : "https://www.luke.fi/en/experts/sandeep-thayamkottu"
   email            : "sandeep.thayamkottu@luke.fi" 
 
   # Academic websites
@@ -38,10 +38,10 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=Gop36hoAAAAJ&hl=en"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-8846-8243"
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : #
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -51,13 +51,13 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "https://github.com/sthayamkottu"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+ # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "https://www.linkedin.com/in/sthayamkottu/"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
